@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href='https://fonts.googleapis.com/css?family=Abril Fatface' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Hind' rel='stylesheet'>
+	<style type="text/css">
+		body{
+			background-image: url('https://i.pinimg.com/736x/b0/9b/9f/b09b9f840ab5cb6f82dc3f0d4e40a009.jpg');
+		}
+		h1, h3{
+			font-family: Abril Fatface;
+		}
+		img{
+			width: 150px;
+		}
+		p{
+			font-family: Hind;
+		}
+	</style>
+	<title>Q4 Exercise 5</title>
+</head>
+<body>
+	<div class="container text-center">
+	<h1>What Makes a Light Bulb Light Up?</h1>
+
+	<audio id="audio" src="turnonlights.mp3"></audio>
+	<img src="switchOFF.PNG" id="Bulb"> 
+
+	<script type="text/javascript">
+		function On(){
+			document.getElementById('Bulb').src = "switchON.PNG";
+			document.getElementById('audio').play();
+		}
+		function Off(){
+			document.getElementById('Bulb').src = "switchOFF.PNG";
+			document.getElementById('audio').pause();
+		}
+	</script>
+	<br>
+	<button class="btn btn-light" onmouseover="On()">SWITCH ON</button>
+
+	<script type="text/javascript">
+		function OFF(){
+			document.getElementById('Bulb').src = "switchOFF.PNG";
+		}
+		function ON(){
+			document.getElementById('Bulb').src = "switchON.PNG";
+		}
+	</script>
+	<br>
+	<button class="btn btn-dark" onmouseover="Off()">SWITCH OFF</button>
+	</div>
+	<br>
+	<div class="container">
+	<p>Back before the invention of modern lighting, you probably would've reached for a candle or an oil lamp. If you lived in a big house, you probably needed several candles or lamps. Lighting all these devices — and keeping them lit — could be quite a chore. They could also produce a lot of heat and soot that weren't necessarily very pleasant.
+	<br>
+	<br>
+	It's no WONDER that inventors of the past yearned for a simple solution to lighting their way in the dark. In the late 1800s, two inventors — American Thomas Edison and Englishman Sir Joseph Swan — came up with the same invention independently around the same time: the light bulb.
+	<br>
+	<br>
+	Looking back across time, it's interesting to note that it took so long for such a simple invention to come about. The traditional light bulb, also called an incandescent light bulb, is an elegantly simple device made up of only a few basic parts. In fact, it hasn't changed much since Edison's day. It was, however, a technological revolution that forever changed history.</p>
+
+	<h3>The Ohm's Law Equations</h3>
+	<p>Ohm's Law is a formula used to calculate the relationship between voltage, current and resistance in an electrical circuit.
+	<br>
+	To students of electronics, Ohm's Law (E = IR) is as fundamentally important as Einstein's Relativity equation (E = mc²) is to physicists.
+	<br>
+	E = I x R
+	<br>
+	When spelled out, it means voltage = current x resistance, or volts = amps x ohms, or V = A x Ω.</p>
+	<p>Calculate the amount of current (I) in a circuit, give the values of voltage (E) and resistance (R).</p>
+	</div>
+	<div class="text-center">
+		<img src="fig1.png" id='fig1' style="width: 35%;"><br>
+	</div>
+	<div class="container">
+		Enter Voltage (E): <input type="text" id="V" class="form-control"><br>
+		Enter Resistance (R): <input type="text" id="R" class="form-control"><br>
+		<input type="submit" name="COMPUTE" class="btn btn-light" onclick="Compute()">
+		<p id="Output"></p>
+	</div>
+
+	<script type="text/javascript">
+		function Compute(){
+			let Voltage = document.getElementById('V').value;
+			let Resistance = document.getElementById('R').value;
+			let Current = Voltage/Resistance;
+			document.getElementById('Output').innerHTML = "The Current (I) is:" + Current;
+		}
+	</script>
+	<div class="container">
+	SOURCES:
+	<br>
+	<a href="https://www.wonderopolis.org/wonder/what-makes-a-light-bulb-light-up">Know more about light bulbs!</a>
+	<br>
+	<a href="https://www.fluke.com/en-ph/learn/blog/electrical/what-is-ohms-law">Learn more about Ohm's Law here.</a>
+	</div>
+</body>
+</html>
